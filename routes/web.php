@@ -21,7 +21,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('admin-panel.app');
 });
-Route::view('/dashboardTest','dashboardTest');
+Route::view('/logino','login');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

@@ -1,6 +1,6 @@
 @include('admin-panel.header')
 
-<body class="">
+<body>
 
 	<div class="page-wrapper">
 
@@ -8,7 +8,7 @@
 		<div class="preloader"></div>
 
 		<!-- Main Header-->
-		<header class="main-header">
+		<header class="main-header fixed-header">
 
 			@include('admin-panel.navbar')
 			<!-- Mobile Menu  -->

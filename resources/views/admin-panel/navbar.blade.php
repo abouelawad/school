@@ -1,5 +1,5 @@
     	<!-- Header Upper -->
-      <div class="header-upper">
+      <div class="header-upper ">
         <div class="outer-container">
             <div class="clearfix">
                 
@@ -66,6 +66,7 @@
                   </li>
                   <li  ><a href="#">المنتدى</a> </li>
                   <li  ><a href="price.html">خطط الأسعار </a> </li>
+
                 </ul>
               </div>
               
@@ -74,6 +75,7 @@
           </div>
           
           <!-- Options Box -->
+          @if (Auth::user())            
           <div class="options-box clearfix">
             
             <!-- Message Box -->
@@ -150,11 +152,21 @@
                   <li><a href="feedback.html">Feedback</a></li>
                   <li><a href="contact.html">Contact Us</a></li>
                   <li><a href="help.html">Help</a></li>
+                  <li> <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a></li>
+                {{-- logout form --}}
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
                 </ul>
               </div>
             </div>
             
           </div>
+          @endif
           
         </div>
         
@@ -162,4 +174,4 @@
           </div>
       </div>
       <!--End Header Upper-->
-      
+     
