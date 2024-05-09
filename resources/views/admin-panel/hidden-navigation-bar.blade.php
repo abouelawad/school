@@ -15,23 +15,25 @@
 			<li><a href="course-detail.html"><span class="icon flaticon-new-window"></span>Course Landing</a></li>
 			<li><a href="team.html"><span class="icon flaticon-instructor"></span>Popular Instructors</a></li>
 		</ul>
-		<div class="heading">Instructor</div>
-		<ul class="pages-list">
-			<li><a href="dashboard.html"><span class="icon flaticon-home"></span>Dashboard</a></li>
-			<li><a href="manage-course.html"><span class="icon flaticon-test"></span>Manage Courses</a></li>
-			<li><a href="earning.html"><span class="icon flaticon-scholarship"></span>Earnings</a></li>
-			<li><a href="edit-course.html"><span class="icon flaticon-report"></span>Edit Course</a></li>
-			<li><a href="instructor-profile.html"><span class="icon flaticon-file"></span>Instructor Profile</a></li>
-		</ul>
-		<div class="heading">Student</div>
-		<ul class="pages-list">
-			<li><a href="price.html"><span class="icon flaticon-money-bag"></span>Pricing</a></li>
-			<li><a href="enrolled-courses.html"><span class="icon flaticon-test"></span>Enrolled Courses</a></li>
-			<li><a href="certificate.html"><span class="icon flaticon-skills"></span>Certificate Center</a></li>
-			<li><a href="test.html"><span class="icon flaticon-quiz"></span>Quiz</a></li>
-			<li><a href="result.html"><span class="icon flaticon-document"></span>Quiz Result</a></li>
-			<li><a href="student-profile.html"><span class="icon flaticon-student"></span>Student Profile</a></li>
-		</ul>
+		@if (Auth::user())
+			<div class="heading">Instructor</div>
+			<ul class="pages-list">
+				<li><a href="dashboard.html"><span class="icon flaticon-home"></span>Dashboard</a></li>
+				<li><a href="manage-course.html"><span class="icon flaticon-test"></span>Manage Courses</a></li>
+				<li><a href="earning.html"><span class="icon flaticon-scholarship"></span>Earnings</a></li>
+				<li><a href="edit-course.html"><span class="icon flaticon-report"></span>Edit Course</a></li>
+				<li><a href="instructor-profile.html"><span class="icon flaticon-file"></span>Instructor Profile</a></li>
+			</ul>
+			<div class="heading">Student</div>
+			<ul class="pages-list">
+				<li><a href="price.html"><span class="icon flaticon-money-bag"></span>Pricing</a></li>
+				<li><a href="enrolled-courses.html"><span class="icon flaticon-test"></span>Enrolled Courses</a></li>
+				<li><a href="certificate.html"><span class="icon flaticon-skills"></span>Certificate Center</a></li>
+				<li><a href="test.html"><span class="icon flaticon-quiz"></span>Quiz</a></li>
+				<li><a href="result.html"><span class="icon flaticon-document"></span>Quiz Result</a></li>
+				<li><a href="student-profile.html"><span class="icon flaticon-student"></span>Student Profile</a></li>
+			</ul>
+		@endif
 		<div class="heading">Pages</div>
 		<ul class="pages-list">
 			<li><a href="blog.html"><span class="icon flaticon-social-media"></span>Blog</a></li>

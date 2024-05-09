@@ -53,7 +53,7 @@
 						</div>
 						
 						<div class="form-group">
-							<div class="users">New User? <a href="sign-up.html">Sign Up Now</a></div>
+							<div class="users">New User? <a href="{{ route('register') }}">Sign Up Now</a></div>
 						</div>
 						
 					</form>

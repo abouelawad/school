@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// Route::prefix('student')->group(function(){
+//   Route::get('dashboard',[StudentController::class,'index']);
+// })->middleware(['auth', 'verified'])->name('student.dashboard');

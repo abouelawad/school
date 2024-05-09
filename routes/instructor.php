@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// Route::prefix('instructor')->group(function(){
+//   Route::get('dashboard',[InstructorController::class,'index']);
+// })->middleware(['auth', 'verified'])->name('instructor.dashboard');
