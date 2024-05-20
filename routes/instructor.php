@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Instructor\InstructorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::prefix('instructor')->group(function(){
-//   Route::get('dashboard',[InstructorController::class,'index']);
-// })->middleware(['auth', 'verified'])->name('instructor.dashboard');
+Route::prefix('instructor')->middleware(['auth', 'verified','role:instructor'])->group(function(){
+  Route::get('dashboard',[InstructorController::class,'index'])->name('instructor.dashboard');
+});

@@ -66,6 +66,12 @@
                   </li>
                   <li  ><a href="#">المنتدى</a> </li>
                   <li  ><a href="price.html">خطط الأسعار </a> </li>
+                  @guest
+          
+                  <li><a href="{{ route('login') }}">LogIn</a></li>
+                  <li><a href="{{ route('register') }}">Register</a></li>
+                
+                @endguest
 
                 </ul>
               </div>
@@ -167,7 +173,7 @@
             
           </div>
           @endif
-          
+ 
         </div>
         
               </div>

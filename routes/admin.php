@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,12 @@ use App\Http\Controllers\Admin\AdminController;
 |
 */
 
-// Route::prefix('admin')->group(function(){
-//   Route::get('dashboard',[AdminController::class,'index']);
-// })->middleware(['auth', 'verified'])->name('admin.dashboard');
+Route::prefix('admin')->middleware(['auth', 'verified','role:admin'])->group(function(){
+  Route::get('dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+  Route::resource('category', CategoryController::class);
+
+});
+
+// Route::middleware(['auth', 'verified'])->group(function () {
+//   Route::get('admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+// });

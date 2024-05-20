@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Student\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::prefix('student')->group(function(){
-//   Route::get('dashboard',[StudentController::class,'index']);
-// })->middleware(['auth', 'verified'])->name('student.dashboard');
+Route::prefix('student')->middleware(['auth', 'verified','role:student'])->group(function(){
+  Route::get('dashboard',[StudentController::class,'index'])->name('student.dashboard');
+});
+

@@ -13,6 +13,8 @@
 <script src="{{ asset('assets') }}/js/script.js"></script>
 <script src="{{ asset('assets') }}/js/color-settings.js"></script>
 
+@yield('scripts')
+
 </body>
 
 </html>

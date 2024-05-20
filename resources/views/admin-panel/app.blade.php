@@ -27,10 +27,21 @@
 		<!--End Main Header -->
 
 		<!-- Sidebar Page Container -->
-		<div class="sidebar-page-container">
-			@yield('content')
 		
-	</div>
+			
+		<div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+						
+					
+							
+							@yield('content')
+					
+				
+					</div>
+			</div>
+		</div>
+				
 
 	<!-- Main Footer -->
 	<footer class="main-footer">
