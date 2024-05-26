@@ -161,3 +161,4 @@
 
 	<!--Scroll to top-->
 	@include('admin-panel.footer')
+	

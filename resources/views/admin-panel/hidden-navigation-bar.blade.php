@@ -10,7 +10,7 @@
 			<li class="active"><a href="index.html"><span class="icon flaticon-home"></span>Home</a></li>
 			<li><a href="featured-courses.html"><span class="icon flaticon-book"></span>Featured Courses</a></li>
 			<li><a href="course-lesson.html"><span class="icon flaticon-category"></span>Courses Lesson</a></li>
-			<li><a href="category.html"><span class="icon flaticon-test"></span>Course Categories</a></li>
+			<li><a href="{{ route('category.index') }}"><span class="icon flaticon-test"></span>Course Categories</a></li>
 			<li><a href="latest-courses.html"><span class="icon flaticon-subscription"></span>Latest Courses</a></li>
 			<li><a href="course-detail.html"><span class="icon flaticon-new-window"></span>Course Landing</a></li>
 			<li><a href="team.html"><span class="icon flaticon-instructor"></span>Popular Instructors</a></li>
