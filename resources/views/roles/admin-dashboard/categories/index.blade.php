@@ -23,8 +23,8 @@
 
 					<div class="pull-left">
 						<h4>Manage Courses</h4>
-						<div id='ajax-response' >
 
+						<div id='ajax-response'>
 						</div>
 					</div>
 					<div class="pull-right">
@@ -41,11 +41,11 @@
 					<div class="title-box clearfix">
 						<!-- Title Column -->
 						<div class="title-column">
-							<h6>Title</h6>
+							<h6>Name</h6>
 						</div>
 						<!-- Title Column -->
 						<div class="title-column">
-							<h6>Publish Date</h6>
+							<h6>created Date</h6>
 						</div>
 						<!-- Title Column -->
 						<div class="title-column">
@@ -65,114 +65,24 @@
 
 						</thead>
 						<tbody>
-
+							@foreach ($allCategories as $category)
+								
 							<tr>
-								<th class="title" scope="col">01. Learn IOS Development</th>
-								<th class="post-date" scope="col">01 Jan 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
+								<th class="title" scope="col">{{ $loop->iteration }}. {{ $category->name }}</th>
+								<th class="post-date" scope="col">{{ $category->created_at->format('d-M-Y') }}</th>
+								<th class="sales" scope="col">static value</th>
+								{{-- @dd($category->children()->where('id',$category->id)->get()) --}}
+								{{-- <th class="category" scope="col">{{ $category->children()->first()->parent??'null' }}</th> --}}
+								{{-- <th class="category" scope="col">{{ $category->children()->where('id',$category->id)}}</th> --}}
+								<th class="category" scope="col">sdgf</th>
+								<th class="actions" scope="col">
+									<a href="{{ route('category.edit',$category->id) }}" class="flaticon-edit-2"></a>
+									<a href="{{ route('category.destroy',$category->id) }}" data-confirm-delete='true' class="flaticon-trash"></a>
+								</th>
 							</tr>
+							@endforeach
 
-							<tr>
-								<th class="title" scope="col">02. Build Responsive Real world</th>
-								<th class="post-date" scope="col">12 Mar 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
-
-							<tr>
-								<th class="title" scope="col">03. Master in website design</th>
-								<th class="post-date" scope="col">12 Mar 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
-
-							<tr>
-								<th class="title" scope="col">04. Learn IOS Development</th>
-								<th class="post-date" scope="col">01 Jan 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
-
-							<tr>
-								<th class="title" scope="col">05. Build Responsive Real world</th>
-								<th class="post-date" scope="col">12 Mar 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
-
-							<tr>
-								<th class="title" scope="col">06. Master in website design</th>
-								<th class="post-date" scope="col">12 Mar 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
-
-							<tr>
-								<th class="title" scope="col">07. Learn IOS Development</th>
-								<th class="post-date" scope="col">01 Jan 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
-
-							<tr>
-								<th class="title" scope="col">08. Build Responsive Real world</th>
-								<th class="post-date" scope="col">12 Mar 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
-
-							<tr>
-								<th class="title" scope="col">09. Master in website design</th>
-								<th class="post-date" scope="col">12 Mar 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
-
-							<tr>
-								<th class="title" scope="col">10. Learn IOS Development</th>
-								<th class="post-date" scope="col">01 Jan 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
-
-							<tr>
-								<th class="title" scope="col">11. Build Responsive Real world</th>
-								<th class="post-date" scope="col">12 Mar 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
-
-							<tr>
-								<th class="title" scope="col">12. Master in website design</th>
-								<th class="post-date" scope="col">12 Mar 20</th>
-								<th class="sales" scope="col">36 Sales</th>
-								<th class="category" scope="col">Development</th>
-								<th class="actions" scope="col"><a href="#" class="flaticon-edit-2"></a><a href="#"
-										class="flaticon-trash"></a></th>
-							</tr>
+			
 
 						</tbody>
 					</table>
@@ -241,6 +151,8 @@
 			</div>
 		</div>
 	</div>
+	@include('sweetalert::alert')
+
 @endsection
 
 
